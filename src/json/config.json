@@ -1,0 +1,154 @@
+{
+    "tasknumber": {
+        "hasMultiple": false,
+        "required": true,
+        "format": "\\"
+    },
+    "tasks": {
+        "hasSubGroup": true,
+        "required": true,
+        "min-count": 1,
+        "copy-file": {
+            "ui-parameters": {
+                "source": {
+                    "element": "text",
+                    "required": true,
+                    "placeholder": "\\",
+                    "sanitize-input-regex": ""
+                },
+                "target": {
+                    "element": "select",
+                    "options": ["opt1", "opt2", "opt3"],
+                    "required": true,
+                    "placeholder": "\\"
+                },
+                "filename": {
+                    "element": "file",
+                    "required": true
+                }
+            },
+            "action": "copy.ps1"
+        },
+        "delete-file": {
+            "parameters": {
+                "target": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "filename": {
+                    "required": true
+                }
+            },
+            "action": "delete.ps1"
+        },
+        "move-file": {
+            "parameters": {
+                "source": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "target": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "filename": {
+                    "required": true
+                }
+            },
+            "action": "move.ps1"
+        },
+        "rename-file": {
+            "parameters": {
+                "target": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "filename": {
+                    "required": true
+                }
+            },
+            "action": "rename.ps1"
+        },
+        "backup-file": {
+            "parameters": {
+                "target": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "filename": {
+                    "required": true
+                }
+            },
+            "action": "backup.ps1"
+        },
+        "create-folder": {
+            "parameters": {
+                "target": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "folder": {
+                    "required": true
+                }
+            },
+            "action": "createFolder.ps1"
+        },
+        "copy-folder": {
+            "parameters": {
+                "source": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "target": {
+                    "required": true,
+                    "format": "\\"
+                }
+            },
+            "action": "copyFolder.ps1"
+        },
+        "move-folder": {
+            "parameters": {
+                "source": {
+                    "required": true,
+                    "format": "\\"
+                },
+                "target": {
+                    "required": true,
+                    "format": "\\"
+                }
+            },
+            "action": "copyFolder.ps1"
+        },
+        "run-batch": {
+            "parameters": {
+                "serverToRun": {
+                    "required": false,
+                    "format": "\\"
+                },
+                "script": {
+                    "required": true,
+                    "format": "\\"
+                }
+            },
+            "action": "runWinBatch.ps1"
+        },
+        "run-ps1": {
+            "parameters": {
+                "serverToRun": {
+                    "required": false,
+                    "format": "\\"
+                },
+                "script": {
+                    "required": true,
+                    "format": "\\"
+                }
+            },
+            "action": "runPs1.ps1"
+        }
+    },
+    "notify": {
+        "hasMultiple": false,
+        "required": true,
+        "format": "\\"
+    }
+}
