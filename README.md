@@ -6,4 +6,4 @@
 
 ## Production Mode ##
 * run "npm run build" to bundle the project.
-* production files is located in "dist" folder.
+* production files are located in "dist" folder.
