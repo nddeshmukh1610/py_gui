@@ -10,3 +10,18 @@
 * go to project folder and run "npm install"
 * run "npm run build" to bundle the project.
 * production files are located in "dist" folder.
+
+"tasknumber": {
+        "hasMultiple": false,
+        "element": "text",
+        "required": true,
+        "format": "\\"
+    },
+
+    ,
+    "notify": {
+        "element": "text",
+        "hasMultiple": false,
+        "required": true,
+        "format": "\\"
+    }

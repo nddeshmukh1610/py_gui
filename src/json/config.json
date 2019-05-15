@@ -1,29 +1,28 @@
 {
-    "tasknumber": {
-        "hasMultiple": false,
-        "required": true,
-        "format": "\\"
-    },
-    "tasks": {
-        "hasSubGroup": true,
-        "required": true,
-        "min-count": 1,
+    "file-tasks": {
+        "tasks-attributes": {
+            "required": true,
+            "min-count": 1
+        },
         "copy-file": {
-            "ui-parameters": {
+            "parameters": {
                 "source": {
-                    "element": "text",
+                    "element": "input-text",
                     "required": true,
-                    "placeholder": "\\",
-                    "sanitize-input-regex": ""
+                    "format": "\\"
                 },
                 "target": {
                     "element": "select",
-                    "options": ["opt1", "opt2", "opt3"],
+                    "options": [
+                        "opt1",
+                        "opt2",
+                        "opt3"
+                    ],
                     "required": true,
                     "placeholder": "\\"
                 },
                 "filename": {
-                    "element": "file",
+                    "element": "textarea",
                     "required": true
                 }
             },
@@ -32,10 +31,12 @@
         "delete-file": {
             "parameters": {
                 "target": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 },
                 "filename": {
+                    "element": "input-text",
                     "required": true
                 }
             },
@@ -44,14 +45,17 @@
         "move-file": {
             "parameters": {
                 "source": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 },
                 "target": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 },
                 "filename": {
+                    "element": "input-text",
                     "required": true
                 }
             },
@@ -60,10 +64,12 @@
         "rename-file": {
             "parameters": {
                 "target": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 },
                 "filename": {
+                    "element": "input-text",
                     "required": true
                 }
             },
@@ -72,22 +78,32 @@
         "backup-file": {
             "parameters": {
                 "target": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 },
                 "filename": {
+                    "element": "input-text",
                     "required": true
                 }
             },
             "action": "backup.ps1"
+        }
+    },
+    "folder-tasks": {
+        "tasks-attributes": {
+            "required": true,
+            "min-count": 1
         },
         "create-folder": {
             "parameters": {
                 "target": {
                     "required": true,
+                    "element": "input-text",
                     "format": "\\"
                 },
                 "folder": {
+                    "element": "input-text",
                     "required": true
                 }
             },
@@ -96,10 +112,12 @@
         "copy-folder": {
             "parameters": {
                 "source": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 },
                 "target": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 }
@@ -109,23 +127,33 @@
         "move-folder": {
             "parameters": {
                 "source": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 },
                 "target": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 }
             },
             "action": "copyFolder.ps1"
+        }
+    },
+    "batch-tasks": {
+        "tasks-attributes": {
+            "required": true,
+            "min-count": 1
         },
         "run-batch": {
             "parameters": {
                 "serverToRun": {
+                    "element": "input-text",
                     "required": false,
                     "format": "\\"
                 },
                 "script": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 }
@@ -135,20 +163,17 @@
         "run-ps1": {
             "parameters": {
                 "serverToRun": {
+                    "element": "input-text",
                     "required": false,
                     "format": "\\"
                 },
                 "script": {
+                    "element": "input-text",
                     "required": true,
                     "format": "\\"
                 }
             },
             "action": "runPs1.ps1"
         }
-    },
-    "notify": {
-        "hasMultiple": false,
-        "required": true,
-        "format": "\\"
     }
 }

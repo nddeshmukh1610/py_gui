@@ -29,6 +29,7 @@
     "bulma": "^0.7.4",
     "cash-dom": "^3.2.0",
     "clean-webpack-plugin": "^2.0.0",
+    "dom-autoscroller": "^2.3.4",
     "dragula": "^3.7.2"
   }
 }
