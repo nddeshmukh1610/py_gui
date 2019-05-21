@@ -1,6 +1,8 @@
 import $ from 'cash-dom';
 
-let appState = {}
+let appState = {
+    taskCounter: 0
+}
 
 export const initAppState = () => {
     $('#tasksList .taskGroup').each(function (i, e) {

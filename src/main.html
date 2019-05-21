@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GenXGuru</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GenXGuru</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato"
+            rel="stylesheet">
+    </head>
 
-<body>
-    <div class="columns is-gapless">
-        <div class="column">
-            <div class="navbar is-fixed-top header is-transparent">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="#">
-                        <h1 class="logo">GENXGURU</h1>
-                    </a>
-                    <div class="navbar-burger burger" data-target="genxguruNavbar">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+    <body>
+        <div class="navbar is-fixed-top header is-transparent">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <h1 class="logo">GENXGURU</h1>
+                </a>
+                <div class="navbar-burger burger"
+                    data-target="genxguruNavbar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div id="genxguruNavbar" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">Application Type</a>
+                        <div class="navbar-dropdown is-boxed lazyloadAppTypes">
+                            
+                            <!-- <hr class="navbar-divider"> -->
+                        </div>
                     </div>
                 </div>
-
-                <div id="genxguruNavbar" class="navbar-menu">
-                    <div class="navbar-start"></div>
-                    <div class="navbar-end">
-                        <div class="navbar-item has-dropdown">
-                            <a class="navbar-link profile" href="#">GX</a>
-                            <div class="navbar-dropdown is-right is-boxed">
-                                <a href="#" class="dropdown-item">Your Account</a>
-                                <a class="dropdown-item">Settings</a>
-                                <a href="#" class="dropdown-item">Logout</a>
-                            </div>
+                <div class="navbar-end">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link profile" href="#">GX</a>
+                        <div class="navbar-dropdown is-right is-boxed">
+                            <a href="#" class="dropdown-item">Your
+                                Account</a>
+                            <a class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Logout</a>
                         </div>
-
                     </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    <div class="columns is-gapless mainApp">
-        <div class="column loadingApp"><div class="loader" style="width: 50px; height: 50px; margin: 10px auto;"></div></div>
-    </div>
-</body>
+        <div class="columns is-gapless mainApp">
+            <div class="column loadingApp"><div class="loader" style="width:
+                    50px; height: 50px; margin: 10px auto;"></div></div>
+        </div>
+    </body>
 
 </html>
