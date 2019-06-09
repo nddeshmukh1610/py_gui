@@ -1,57 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>GenXGuru</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato"
-            rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GenXGuru</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
 
-    <body>
-        <div class="navbar is-fixed-top header is-transparent">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <h1 class="logo">GENXGURU</h1>
-                </a>
-                <div class="navbar-burger burger"
-                    data-target="genxguruNavbar">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-
-            <div id="genxguruNavbar" class="navbar-menu">
-                <div class="navbar-start">
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="#">Application Type</a>
-                        <div class="navbar-dropdown is-boxed lazyloadAppTypes">
-                            
-                            <!-- <hr class="navbar-divider"> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="navbar-end">
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link profile" href="#">GX</a>
-                        <div class="navbar-dropdown is-right is-boxed">
-                            <a href="#" class="dropdown-item">Your
-                                Account</a>
-                            <a class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Logout</a>
-                        </div>
-                    </div>
-
-                </div>
+<body>
+    <div class="navbar is-fixed-top header is-transparent">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <h1 class="logo">GENXGURU</h1>
+            </a>
+            <div class="navbar-burger burger" data-target="genxguruNavbar">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-        <div class="columns is-gapless mainApp">
-            <div class="column loadingApp"><div class="loader" style="width:
-                    50px; height: 50px; margin: 10px auto;"></div></div>
+
+        <div id="genxguruNavbar" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">Application Type</a>
+                    <div class="navbar-dropdown is-boxed lazyloadAppTypes">
+
+                        <!-- <hr class="navbar-divider"> -->
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link profile" href="#">GX</a>
+                    <div class="navbar-dropdown is-right is-boxed">
+                        <a href="#" class="dropdown-item">Your
+                            Account</a>
+                        <a class="dropdown-item">Settings</a>
+                        <a href="#" class="dropdown-item">Logout</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </body>
+    </div>
+    <div class="columns is-gapless mainApp">
+        <div class="column loadingApp">
+            <div class="loader" style="width:
+                    50px; height: 50px; margin: 10px auto;"></div>
+        </div>
+    </div>
+
+    <div class="modal jsonViewer">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <div class="modal-card-head">
+                <p class="modal-card-title">JSON DATA</p>
+                <button class="delete exit-modal" aria-label="close"></button>
+            </div>
+            <div class="modal-card-body">
+                <!-- Content ... -->
+            </div>
+            <div class="modal-card-foot">
+                <button class="button is-info" id="jsonDownload">Download</button>
+                <button class="button exit-modal">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>

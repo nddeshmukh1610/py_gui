@@ -5,19 +5,19 @@ body {
 
 /* custom scrollbar */
 
-.leftpanel::-webkit-scrollbar, .rightpanel::-webkit-scrollbar {
+#leftpanel::-webkit-scrollbar, #rightpanel::-webkit-scrollbar, #outlinepanel::-webkit-scrollbar {
     width: 6px;
 }
 
-.leftpanel::-webkit-scrollbar-track, .rightpanel::-webkit-scrollbar-track {
-    background: #f5f5f5;
+#leftpanel::-webkit-scrollbar-track, #rightpanel::-webkit-scrollbar-track, #outlinepanel::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.leftpanel::-webkit-scrollbar-thumb, .rightpanel::-webkit-scrollbar-thumb {
+#leftpanel::-webkit-scrollbar-thumb, #rightpanel::-webkit-scrollbar-thumb, #outlinepanel::-webkit-scrollbar-thumb {
     background: #1497FF;
 }
 
-.leftpanel::-webkit-scrollbar-thumb:hover, .rightpanel::-webkit-scrollbar-thumb:hover {
+#leftpanel::-webkit-scrollbar-thumb:hover, #rightpanel::-webkit-scrollbar-thumb:hover, #outlinepanel::-webkit-scrollbar-thumb:hover {
     background: #1497FF;
 }
 
@@ -46,15 +46,22 @@ body {
     margin-top: 53px !important;
 }
 
-.leftpanel {
-    border-right: 1px solid #efefef;
-    background-color: #f5f5f5;
+.mainApp>div {
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
+.leftpanel {
+    border-right: 1px solid #efefef;
+    background-color: #f5f5f5;
+}
+
 .rightpanel {
-    overflow-y: scroll;
     padding: 0 10px;
+}
+
+.outlinepanel {
+    border-left: 1px solid #dfdfdf;
 }
 
 .menu {
@@ -75,7 +82,7 @@ body {
 
 .menu-list a {
     color: #666666;
-    padding: 0.40em 25px;
+    padding: 0.40em 40px;
     text-transform: capitalize;
 }
 
@@ -83,7 +90,7 @@ body {
     color: #1497FF;
 }
 
-.menu-list li ul a, .draggableEl.gu-mirror> a {
+.menu-list li ul a, .draggableEl.gu-mirror>a {
     padding: 0.4em 0.75em !important;
 }
 
@@ -94,23 +101,25 @@ body {
 }
 
 .menu-list li ul li {
-    border-left: 1px solid #dbdbdb;
+    /* border-left: 1px solid #dbdbdb; */
+    /* margin-left: ; */
 }
 
 .menu-list li ul li:hover {
-    border-left: 1px solid #1497FF;
+    /* border-left: 1px solid #1497FF; */
 }
 
-.menu-list .is-expand>a {
+.menu-list .is-expand>a, #tasksPreview.menu-list .is-expand>a {
     color: #1497FF;
+}
+
+#tasksPreview.menu-list li ul{
+    padding-left: 27px;
+    line-height: 1.3em;
 }
 
 #genxguruNavbar a.navbar-item:hover {
     background-color: #efefef !important;
-}
-
-#genxguruNavbar .navbar-start {
-    margin-left: 70px;
 }
 
 .lazyloadAppTypes .navbar-item {
@@ -128,15 +137,17 @@ body {
     width: 0.5em;
 }
 
-.navbar-dropdown.is-boxed {
-    box-shadow: 0 5px 15px rgba(10, 10, 10, 0.1), 0 0 0 0px rgba(10, 10, 10, 0.1);
-    border-radius: 0;
-}
-
 .control input, .control textarea, .control select, .control button {
     box-shadow: none;
     border-radius: 0;
     height: 1.875rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.modal-card-foot button {
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .control input:focus, .control textarea:focus, .control .select:focus, .control .select:active, .control button:focus {
@@ -144,9 +155,26 @@ body {
     box-shadow: none !important;
 }
 
+.modal-card-head {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.modal-card-foot {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
 .label {
     color: #666666;
     text-transform: capitalize;
+}
+
+.rightpanel label.required:after {
+    content: "*";
+    color: red;
+    padding: 3px;
+    /* font-size: 21px; */
 }
 
 .sortBtn {
@@ -154,15 +182,18 @@ body {
     margin: 10px 10px 0 10px;
 }
 
-.taskGroup > a::before {
-    content: '+';
-    margin-right: 8px;
+.taskGroup>a {
+    position: relative;
 }
 
-.taskGroup.is-expand > a::before {
-    content: '-';
-    margin-right: 10px;
-    margin-left: 2px;
+.taskGroup>a .icon {
+    position: absolute;
+    left: 18px;
+    top: 3px;
+}
+
+.taskSection {
+    position: relative;
 }
 
 .taskSection, .rightpanel .draggableEl {
@@ -181,9 +212,8 @@ body {
     border-bottom: 1px solid #eaeaea;
 }
 
-.rightpanel .draggableEl>a, .draggableEl.gu-mirror{
+.rightpanel .draggableEl>a, .draggableEl.gu-mirror {
     text-align: center;
-    
 }
 
 .draggableEl.gu-mirror {
@@ -242,7 +272,7 @@ body {
     filter: alpha(opacity=0.5);
 }
 
-.rightpanel .gu-transit .dragEl {
+.rightpanel .gu-transit .dragEl, .rightpanel .gu-transit .rmTask {
     display: none;
 }
 
@@ -261,7 +291,7 @@ body {
     color: #ffffff;
 }
 
-.taskSection.gu-mirror .dragEl {
+.taskSection.gu-mirror .dragEl, .taskSection.gu-mirror .rmTask {
     display: none;
 }
 
@@ -279,4 +309,64 @@ body {
 
 .label {
     font-size: 13px;
+}
+
+#generateJson {
+    height: 2.25em;
+    font-size: 15px;
+    margin: 6px;
+}
+
+#tasksPreview>div {
+    text-align: center;
+}
+
+.panelHead {
+    box-shadow: 0px 0px 13px #eaeaea;
+}
+
+.panelHead>h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1497FF;
+    padding: 9px 15px;
+}
+
+.rmTask {
+    display: none;
+}
+
+.rightpanel .rmTask {
+    position: absolute;
+    cursor: pointer;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    height: 43px;
+    width: 43px;
+}
+
+.rightpanel .rmTask .fas {
+    padding: 14px 15px;
+    color: #666666 !important;
+}
+
+.rightpanel .rmTask .fas:hover {
+    color: #ff3860 !important;
+}
+
+.alertMsg {
+    margin: 50px auto;
+    font-size: 21px;
+    text-align: center;
+}
+
+@media (min-width:1088px) {
+    #genxguruNavbar .navbar-start {
+        margin-left: 70px;
+    }
+    .navbar-dropdown.is-boxed {
+        box-shadow: 0 5px 15px rgba(10, 10, 10, 0.1), 0 0 0 0px rgba(10, 10, 10, 0.1);
+        border-radius: 0;
+    }
 }

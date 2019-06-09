@@ -2,6 +2,7 @@ import dragula from 'dragula';
 import $ from 'cash-dom';
 import autoScroll from 'dom-autoscroller';
 import { getState, setState } from './appstate';
+import { enableGenJson, updateUserTasks, validateForms } from './helpers';
 
 export const dragndrop = () => {
 
@@ -18,7 +19,7 @@ export const dragndrop = () => {
         }
     });
 
-    const Scroll = autoScroll([document.querySelector('.rightpanel')], {
+    const Scroll = autoScroll([document.querySelector('#rightpanel')], {
         margin: 100,
         maxSpeed: 15,
         pixels: 100,
@@ -33,25 +34,19 @@ export const dragndrop = () => {
     })
 
     dragulaService.on('drop', (el, target) => {
-        let dropEl = $(el)
-        let whichTask = dropEl.attr('taskgroup');
+        console.log(el)
+        if(target && $(target).hasClass('userTasks')){
+            let dropEl = $(el)
+            let whichTask = dropEl.attr('taskgroup');
+            $('.alertMsg, .rightpanel .taskHeading .icon').remove()
+            
+            updateUserTasks(whichTask)
+            dropEl.removeClass('draggableEl').addClass('taskSection')
+            dropEl.children('.dragEl').removeClass('is-hidden')
+            validateForms()
+            enableGenJson()
+        }
 
-        // get & update app state
-        let incTaskCnt = getState()[whichTask]
-        let taskCounter = getState()['taskCounter']
-        console.log('before state change: ', incTaskCnt)
-        setState(whichTask, ++incTaskCnt)
-        setState('taskCounter', ++taskCounter)
-        console.log('after state change: ', getState())
-
-        // add or update task number order in UI
-        $('#rightpanel .userTasks > .uniqueTask').each(function(i, e) {
-            $(this).find('.taskOrderNo').html((i+1)+ '. ')
-            console.log($(this))
-        })
-
-        dropEl.removeClass('draggableEl').addClass('taskSection')
-        dropEl.children('.dragEl').removeClass('is-hidden')
     })
 
 }

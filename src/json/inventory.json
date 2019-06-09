@@ -9,7 +9,8 @@
                 "source": {
                     "element": "input-text",
                     "required": true,
-                    "format": "\\"
+                    "format": "\\",
+                    "placeholder": "c:/example/path"
                 },
                 "target": {
                     "element": "select",
@@ -18,15 +19,16 @@
                         "opt2",
                         "opt3"
                     ],
-                    "required": true,
-                    "placeholder": "\\"
+                    "required": true
                 },
                 "filename": {
                     "element": "textarea",
-                    "required": true
+                    "required": true,
+                    "placeholder": "example.ext"
                 }
             },
-            "action": "copy.ps1"
+            "action": "copy.ps1",
+            "icon": "c"
         },
         "delete-file": {
             "parameters": {
@@ -40,7 +42,8 @@
                     "required": true
                 }
             },
-            "action": "delete.ps1"
+            "action": "delete.ps1",
+            "icon": "d"
         },
         "move-file": {
             "parameters": {
@@ -59,7 +62,8 @@
                     "required": true
                 }
             },
-            "action": "move.ps1"
+            "action": "move.ps1",
+            "icon": "m"
         },
         "rename-file": {
             "parameters": {
@@ -73,7 +77,8 @@
                     "required": true
                 }
             },
-            "action": "rename.ps1"
+            "action": "rename.ps1",
+            "icon": "r"
         },
         "backup-file": {
             "parameters": {
@@ -87,7 +92,8 @@
                     "required": true
                 }
             },
-            "action": "backup.ps1"
+            "action": "backup.ps1",
+            "icon": "b"
         }
     },
     "folder-tasks": {
@@ -107,7 +113,8 @@
                     "required": true
                 }
             },
-            "action": "createFolder.ps1"
+            "action": "createFolder.ps1",
+            "icon": "c"
         },
         "copy-folder": {
             "parameters": {
@@ -122,7 +129,8 @@
                     "format": "\\"
                 }
             },
-            "action": "copyFolder.ps1"
+            "action": "copyFolder.ps1",
+            "icon": "c"
         },
         "move-folder": {
             "parameters": {
@@ -137,7 +145,8 @@
                     "format": "\\"
                 }
             },
-            "action": "copyFolder.ps1"
+            "action": "copyFolder.ps1",
+            "icon": "m"
         }
     },
     "batch-tasks": {
@@ -158,7 +167,8 @@
                     "format": "\\"
                 }
             },
-            "action": "runWinBatch.ps1"
+            "action": "runWinBatch.ps1",
+            "icon": "r"
         },
         "run-ps1": {
             "parameters": {
@@ -173,7 +183,8 @@
                     "format": "\\"
                 }
             },
-            "action": "runPs1.ps1"
+            "action": "runPs1.ps1",
+            "icon": "r"
         }
     }
 }

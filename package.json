@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      [
+        "@babel/transform-runtime"
+      ]
+    ]
+  },
   "scripts": {
     "start": "webpack-dev-server  --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
@@ -11,6 +21,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
@@ -26,10 +37,13 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@babel/runtime": "^7.4.5",
     "bulma": "^0.7.4",
     "cash-dom": "^3.2.0",
     "clean-webpack-plugin": "^2.0.0",
     "dom-autoscroller": "^2.3.4",
-    "dragula": "^3.7.2"
+    "dragula": "^3.7.2",
+    "json-formatter-js": "^2.2.1",
+    "whatwg-fetch": "^3.0.0"
   }
 }

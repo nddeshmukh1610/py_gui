@@ -1,0 +1,11 @@
+{
+    "sas": {
+        "applicable-tasks": ["file-tasks"]
+    },
+    "sql": {
+        "applicable-tasks": ["folder-tasks", "file-tasks"]
+    },
+    "iis": {
+        "applicable-tasks": ["folder-tasks", "batch-tasks"]
+    }
+}

@@ -1,7 +1,9 @@
 import $ from 'cash-dom';
 
 let appState = {
-    taskCounter: 0
+    taskCounter: 0,
+    enableGenerateJson: false,
+    taskNumber: null
 }
 
 export const initAppState = () => {
